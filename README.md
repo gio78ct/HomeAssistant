@@ -5,6 +5,8 @@ hassctl update-hass
 hassctl start
 hassctl stop
 hassctl error
+hassctl log - Follow the Home Assistant logs (errors are highlighted)
+hassctl zwave - Follow the Open Z-Wave logs
 ```
 ## USEFUL LINKS
 * http://www.yamllint.com (tool to verify *.yaml sintax)
