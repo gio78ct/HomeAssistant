@@ -1,0 +1,7 @@
+# IP CAMERA
+camera:
+  - platform: mjpeg
+    mjpeg_url: http://192.168.1.5/videostream.cgi?rate=25
+#   mjpeg_url: http://192.168.1.5/videostream.cgi?rate=11
+    username: admin
+    password: !secret wansview_password
