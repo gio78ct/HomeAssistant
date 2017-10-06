@@ -1,20 +1,12 @@
 homeassistant:
 # Name of the location where Home Assistant is running
   name: Casa
-  # Location required to calculate the time the sun rises and sets
   latitude: 37.3006771
   longitude: 13.5524958
-  # Impacts weather/sunrise data (altitude above sea level in meters)
   elevation: 94
-  # metric for Metric, imperial for Imperial
   unit_system: metric
-  # Pick yours from here: http://en.wikipedia.org/wiki/List_of_tz_database_time_zones
   time_zone: Europe/Rome
   customize: !include customize.yaml
-
-
-# Show links to resources in log and frontend
-# introduction:
 
 # Enables the frontend
 frontend:
@@ -113,23 +105,23 @@ mqtt:
   port: 1883
   client_id: home-assistant-1
   username: pi
-  password: raspberry
+  password: !secret mqtt_password
 
 # IP CAMERA
 camera:
   - platform: mjpeg
 #   mjpeg_url: http://192.168.1.5/videostream.cgi?rate=25
-    mjpeg_url: http://192.168.1.5/videostream.cgi?rate=11
+    mjpeg_url: !secret wansview_camera_mjpeg_url
     username: admin
-    password: u00026709
+    password: !secret wansview_camera_password
 #   authentication: digest
 
 # TERMOSTATO NETATMO
 netatmo:
-  api_key: 5801df4965d1c41aba8b46bb
-  secret_key: QJHsEn8z05JBnkp2n4rewvfZePMAr014F
+  api_key: !secret netatmo_thermostat_api_key
+  secret_key: !secret netatmo_thermostat_secret_key
   username: gio78ct@gmail.com
-  password: U026709?
+  password: !secret netatmo_thermostat_password
 
 # Z-WAVE
 zwave:
