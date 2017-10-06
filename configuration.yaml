@@ -107,15 +107,6 @@ mqtt:
   username: pi
   password: !secret mqtt_password
 
-# IP CAMERA
-camera:
-  - platform: mjpeg
-#   mjpeg_url: http://192.168.1.5/videostream.cgi?rate=25
-    mjpeg_url: !secret wansview_camera_mjpeg_url
-    username: admin
-    password: !secret wansview_camera_password
-#   authentication: digest
-
 # TERMOSTATO NETATMO
 netatmo:
   api_key: !secret netatmo_thermostat_api_key
@@ -139,7 +130,11 @@ media_player:
   - platform: lg_netcast
     host: 192.168.1.47
     access_token: !secret tvlg_salone_token
-
+    
+    
+#######################################
+# NOTIFICATION ########################
+#######################################
 notify:
   - platform: telegram
     name: telegram
@@ -160,6 +155,7 @@ telegram_bot:
 ########################################
 # INCLUDES #############################
 ########################################
+camera: !include_dir_list cameras/
 zone: !include zones.yaml
 automation: !include automation.yaml
 group: !include groups.yaml
