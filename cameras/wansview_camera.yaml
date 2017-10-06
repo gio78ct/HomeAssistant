@@ -1,4 +1,5 @@
 platform: mjpeg
-mjpeg_url: http://192.168.1.5/videostream.cgi?rate=25
+mjpeg_url: !secret wansview_camera_mjpeg_url
 username: admin
-password: !secret wansview_password
+password: !secret wansview_camera_password
+#   authentication: digest
