@@ -138,7 +138,7 @@ zwave:
 media_player:
   - platform: lg_netcast
     host: 192.168.1.47
-    access_token: 278540
+    access_token: !secret tvlg_salone_token
 
 notify:
   - platform: telegram
