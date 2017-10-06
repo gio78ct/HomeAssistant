@@ -1,5 +1,4 @@
 homeassistant:
-# Name of the location where Home Assistant is running
   unit_system: metric
   time_zone: Europe/Rome
   customize: !include customize.yaml
