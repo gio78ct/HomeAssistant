@@ -165,9 +165,13 @@ telegram_bot:
   allowed_chat_ids:
     - 300989693
 
+########################################
+# INCLUDES #############################
+########################################
 zone: !include zones.yaml
 automation: !include automation.yaml
 group: !include groups.yaml
 sensor: !include sensor.yaml
 device_tracker: !include device_trackers.yaml
 scene: !include scenes.yaml
+secret: !include secrets.yaml
