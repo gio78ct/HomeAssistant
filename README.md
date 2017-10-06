@@ -12,3 +12,11 @@ hassctl zwave - Follow the Open Z-Wave logs
 ## USEFUL LINKS
 * http://www.yamllint.com (tool to verify *.yaml sintax)
 * https://materialdesignicons.com/
+
+# All In One Installation
+https://www.nicolapreo.it/installare-home-assistant/
+
+## Dynamic DNS: duckdns.org
+https://www.duckdns.org/install.jsp?tab=pi&domain=gio78
+
+## SSL: Let's Encrypt
