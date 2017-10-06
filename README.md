@@ -1,9 +1,8 @@
-# HomeAssistant
-I also use [HASSCTL](https://github.com/dale3h/hassctl) which allows for some of these super simple commandline shortcuts for starting, stopping, upgrading, and debugging HA.
+# [HomeAssistant](https://home-assistant.io)
+Use [HASSCTL](https://github.com/dale3h/hassctl) to have some of these super simple commandline shortcuts for starting, stopping, upgrading, and debugging HA.
 ```
 hassctl update-hass
 hassctl start
 hassctl stop
 hassctl error
 ```
-
