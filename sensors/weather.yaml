@@ -1,0 +1,13 @@
+## WUNDERGROUND ###
+# Riferimento: https://home-assistant.io/components/sensor.wunderground/
+platform: wunderground
+api_key: !secret wunderground_api_key
+monitored_conditions:
+  - temp_c
+  - feelslike_c
+  - weather
+  - wind_kph
+  - relative_humidity
+  - precip_today_metric
+  - location
+  - observation_time
