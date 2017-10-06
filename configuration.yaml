@@ -25,7 +25,7 @@ panel_iframe:
     url: 'http://gio78.duckdns.org'
 
 http:
-  api_password: PASSWORD
+  api_password: !secret http_password 
   ssl_certificate: '/etc/letsencrypt/live/gio78.duckdns.org-0001/fullchain.pem'
   ssl_key: '/etc/letsencrypt/live/gio78.duckdns.org-0001/privkey.pem'
 # Uncomment this if you are using SSL or running in Docker etc
