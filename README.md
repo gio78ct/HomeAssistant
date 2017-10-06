@@ -1,5 +1,6 @@
 # [HomeAssistant](https://home-assistant.io)
 Use [HASSCTL](https://github.com/dale3h/hassctl) to have some of these super simple commandline shortcuts for starting, stopping, upgrading, and debugging HA.
+Don't forget to modify the configuration file "/etc/hassctl.conf" according to your type oh H.A. installation (Hassbian, AIO, Hass.io, ecc).
 ```
 hassctl update-hass
 hassctl start
