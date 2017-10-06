@@ -1,0 +1,128 @@
+#################################################################
+## Customize
+#################################################################
+
+  group.all_temperature:
+    hidden: false
+    friendly_name: 'Temperatura'
+  group.all_automations:
+    hidden: false
+    friendly_name: 'Automazioni'
+  group.all_scripts:
+    hidden: false
+  group.all_devices:
+    hidden: false
+  group.all_lights:
+    hidden: false
+  group.all_switches:
+    hidden: false
+  group.all_scenes:
+    hidden: false
+ 
+# sensors
+  sensor.fibaro_system_fgms001_motion_sensor_temperature_3_1:
+    friendly_name: 'Andrea'
+  sensor.fibaro_system_fgms001_motion_sensor_temperature_4_1:
+    friendly_name: 'Salone'
+  sensor.fibaro_system_fgms001_motion_sensor_luminance_3_3:
+    friendly_name: 'Andrea'
+  sensor.fibaro_system_fgms001_motion_sensor_luminance_4_3:
+    friendly_name: 'Salone'
+  binary_sensor.fibaro_system_fgms001_motion_sensor_sensor_3_0:
+    friendly_name: 'Andrea'
+  binary_sensor.fibaro_system_fgms001_motion_sensor_sensor_4_0:
+    friendly_name: 'Salone'
+  climate.termostato:
+    friendly_name: 'Termostato Netatmo'
+  sensor.greenwave_powernode_6_port_power_5_8:
+    friendly_name: 'Presa 1'
+  sensor.greenwave_powernode_6_port_power_5_8_2:
+    friendly_name: 'Presa 2'
+  sensor.greenwave_powernode_6_port_power_5_8_3:
+    friendly_name: 'Presa 3'
+  sensor.greenwave_powernode_6_port_power_5_8_4:
+    friendly_name: 'Presa 4'
+  sensor.greenwave_powernode_6_port_power_5_8_5:
+    friendly_name: 'Presa 5'
+  sensor.greenwave_powernode_6_port_power_5_8_6:
+    friendly_name: 'Presa 6'
+  sensor.greenwave_powernode_6_port_energy_5_0:
+    friendly_name: 'Presa 1'
+  sensor.greenwave_powernode_6_port_energy_5_0_2:
+    friendly_name: 'Presa 2'
+  sensor.greenwave_powernode_6_port_energy_5_0_3:
+    friendly_name: 'Presa 3'
+  sensor.greenwave_powernode_6_port_energy_5_0_4:
+    friendly_name: 'Presa 4'
+  sensor.greenwave_powernode_6_port_energy_5_0_5:
+    friendly_name: 'Presa 5'
+  sensor.greenwave_powernode_6_port_energy_5_0_6:                     
+    friendly_name: 'Presa 6'
+# (nascondere) Greenwave powernode previous reading
+  sensor.greenwave_powernode_6_port_previous_reading_5_1:
+    hidden: true
+  sensor.greenwave_powernode_6_port_previous_reading_5_1_2:
+    hidden: true
+  sensor.greenwave_powernode_6_port_previous_reading_5_1_3:
+    hidden: true
+  sensor.greenwave_powernode_6_port_previous_reading_5_1_4:
+    hidden: true
+  sensor.greenwave_powernode_6_port_previous_reading_5_1_5:
+    hidden: true
+  sensor.greenwave_powernode_6_port_previous_reading_5_1_6:
+    hidden: true
+  sensor.greenwave_powernode_6_port_previous_reading_5_9:
+    hidden: true
+  sensor.greenwave_powernode_6_port_previous_reading_5_9_2:
+    hidden: true
+  sensor.greenwave_powernode_6_port_previous_reading_5_9_3:
+    hidden: true
+  sensor.greenwave_powernode_6_port_previous_reading_5_9_4:
+    hidden: true
+  sensor.greenwave_powernode_6_port_previous_reading_5_9_5:
+    hidden: true
+  sensor.greenwave_powernode_6_port_previous_reading_5_9_6:
+    hidden: true
+
+
+# switches
+  switch.greenwave_powernode_6_port_switch_5_0:
+    friendly_name: 'Presa 1'
+  switch.greenwave_powernode_6_port_switch_5_0_2:
+    friendly_name: 'Presa 2'
+  switch.greenwave_powernode_6_port_switch_5_0_3:
+    friendly_name: 'Presa 3'
+  switch.greenwave_powernode_6_port_switch_5_0_4:
+    friendly_name: 'Presa 4'
+  switch.greenwave_powernode_6_port_switch_5_0_5:
+    friendly_name: 'Presa 5'
+  switch.greenwave_powernode_6_port_switch_5_0_6:
+    friendly_name: 'Presa 6' 
+
+# meteo
+  sensor.pws_temp_c:
+    friendly_name: 'Temperatura esterna'
+  sensor.pws_feelslike_c:
+    friendly_name: 'Temperatura percepita'
+  sensor.pws_weather:
+    friendly_name: 'Condizioni meteo'
+  sensor.pws_wind_kph:
+    friendly_name: 'Vento'
+#  sensor.pws_wind_dir:
+#    friendly_name: 'Direzione vento'
+  sensor.pws_relative_humidity:
+    friendly_name: 'Umidità rel.'
+  sensor.pws_precip_today_metric:
+    friendly_name: 'Precipitazioni'
+#  sensor.pws_location:
+#    friendly_name: 'Località'
+#  sensor.pws_observation_time:
+#    friendly_name: 'Ultimo aggiornamento'
+
+# info
+  sensor.fibaro_system_fgms001_motion_sensor_general_4_0:
+    friendly_name: 'Batteria Fibaro A'
+    hidden: true
+  sensor.fibaro_system_fgms001_motion_sensor_general_3_0:
+    friendly_name: 'Batteria Fibaro B'
+    hidden: true
