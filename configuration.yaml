@@ -159,7 +159,7 @@ camera: !include_dir_list cameras/
 zone: !include zones.yaml
 automation: !include automation.yaml
 group: !include groups.yaml
-!include_dir_list sensors/
+sensor: !include_dir_list sensors/
 device_tracker: !include device_trackers.yaml
 scene: !include scenes.yaml
 secret: !include secrets.yaml
