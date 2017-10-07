@@ -1,0 +1,6 @@
+# References: https://home-assistant.io/components/sensor.wunderground/ 
+# https://italian.wunderground.com 
+platform: wunderground
+api_key: !secret wunderground_api_key
+latitude: !secret home_latitude
+longitude: !secret home_longitude
