@@ -4,3 +4,14 @@ platform: wunderground
 api_key: !secret wunderground_api_key
 latitude: !secret home_latitude
 longitude: !secret home_longitude
+lang: IT
+monitored_conditions:
+  - weather
+  - temp_c
+  - wind_kph
+  - wind_dir
+  - relative_humidity
+  - feelslike_c
+  - location
+  - observation_time
+  - precip_today_metric
