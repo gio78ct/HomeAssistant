@@ -1,4 +1,3 @@
-## WUNDERGROUND ###
 # Riferimento: https://home-assistant.io/components/sensor.wunderground/
 platform: wunderground
 api_key: !secret wunderground_api_key
@@ -12,11 +11,3 @@ monitored_conditions:
   - precip_today_metric
   - location
   - observation_time
-
-## DARK SKY ###
-# Riferimento: https://home-assistant.io/components/sensor.darksky
-platform: darksky
-api_key: !secret darksky_api_key
-monitored_conditions:
-  - summary
-  - icon
