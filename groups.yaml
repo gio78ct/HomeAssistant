@@ -52,6 +52,10 @@ device_tracker_card:
     - device_tracker.oneplus_gio
     - device_tracker.vera_plus_controller
     - device_tracker.ubuntuserver
+    - device_tracker.tv_lg_47la660s
+    - device_tracker.wii
+    - device_tracker.playstation3
+
 
 lights_card:
   name: Illuminazione
