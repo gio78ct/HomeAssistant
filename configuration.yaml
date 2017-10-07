@@ -1,6 +1,12 @@
 homeassistant:
+  name: CASA
+  latitude: !secret home_latitude
+  longitude: !secret home_longitude
+  elevation: !secret home_elevation
+  
   unit_system: metric
   time_zone: Europe/Rome
+  
   customize: !include customize.yaml
 
 # Enables the frontend
@@ -157,5 +163,5 @@ group: !include groups.yaml
 sensor: !include_dir_list sensors/
 device_tracker: !include device_trackers.yaml
 scene: !include scenes.yaml
-secret: !include secrets.yaml
+# secret: !include secrets.yaml
 zone: !include_dir_list zones/
