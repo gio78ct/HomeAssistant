@@ -2,6 +2,7 @@
 # Riferimento: https://home-assistant.io/components/sensor.wunderground/
 platform: wunderground
 api_key: !secret wunderground_api_key
+lang: IT
 monitored_conditions:
   - temp_c
   - feelslike_c
