@@ -3,6 +3,7 @@ platform: darksky
 api_key: !secret darksky_api_key
 latitude: !secret home_latitude
 longitude: !secret home_longitude
+lang: it
 monitored_conditions:
   - summary
   - icon
