@@ -6,3 +6,5 @@ longitude: !secret home_longitude
 monitored_conditions:
   - summary
   - icon
+  - temperature
+  - humidity
