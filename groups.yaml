@@ -44,6 +44,12 @@ general_info.card:
   entities:
     - sensor.fibaro_system_fgms001_motion_sensor_general_3_0
     - sensor.fibaro_system_fgms001_motion_sensor_general_4_0
+    
+lights_card:
+  name: Illuminazione
+  entities:
+    - light.hue_white_lamp_1
+    - light.hue_white_lamp_2
 
 outlets_card:
   name: Prese
@@ -105,6 +111,7 @@ lights_view:
   view: yes
   entities:
     - group.luminosity_card
+    - group.lights_card
 
 energy_view:
   name: Energia
