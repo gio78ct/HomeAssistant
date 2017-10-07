@@ -1,42 +1,7 @@
 ##############################################################
 #### CARDS (SCHEDE)###########################################
 ##############################################################
-  default_view:
-    view: yes
-    icon: mdi:home
-    entities:
-      - device_tracker.note3_gio
-      - device_tracker.s3_ale
-      - group.meteo
-      - group.temperatura
-      - group.info
-      - group.all_automations
 
-  Stanze:
-    name: Stanze
-    view: yes
-
-  Sicurezza:
-    name: Sicurezza
-    view: yes
-    entities:
-      - group.presenza
-
-  Luci:
-    name: Luci
-    view: yes
-    entities:
-      - group.illuminazione
-
-
-  Energia:
-    name: Energia
-    view: yes
-    entities:
-      - group.prese
-      - group.potenza
-      - group.energia
- 
 weather_card:
   name: Meteo
   entities:
@@ -49,45 +14,27 @@ weather_card:
     - sensor.pws_precip_today_metric
     - sensor.pws_location
     - sensor.pws_observation_time
-
-##############################################################
-#### VIEWS (VISTE)###########################################
-##############################################################
-
-  Prese:
-    - switch.greenwave_powernode_6_port_switch_5_0
-    - switch.greenwave_powernode_6_port_switch_5_0_2
-    - switch.greenwave_powernode_6_port_switch_5_0_3
-    - switch.greenwave_powernode_6_port_switch_5_0_4
-    - switch.greenwave_powernode_6_port_switch_5_0_5
-    - switch.greenwave_powernode_6_port_switch_5_0_6
-
-  Potenza:
-    - sensor.greenwave_powernode_6_port_power_5_8
-    - sensor.greenwave_powernode_6_port_power_5_8_2
-    - sensor.greenwave_powernode_6_port_power_5_8_3
-    - sensor.greenwave_powernode_6_port_power_5_8_4
-    - sensor.greenwave_powernode_6_port_power_5_8_5
-    - sensor.greenwave_powernode_6_port_power_5_8_6
-
-  Assorbimento:
-    - sensor.greenwave_powernode_6_port_energy_5_0
-    - sensor.greenwave_powernode_6_port_energy_5_0_2
-    - sensor.greenwave_powernode_6_port_energy_5_0_3
-    - sensor.greenwave_powernode_6_port_energy_5_0_4
-    - sensor.greenwave_powernode_6_port_energy_5_0_5
-    - sensor.greenwave_powernode_6_port_energy_5_0_6
-
-  Temperatura:
+    - sensor.dark_sky_summary
+    - sensor.dark_sky_icon
+    - sensor.dark_sky_temperature
+    - sensor.dark_sky_humidity
+   
+temperature_card:
+  name: Temperature
+  entities:
     - sensor.fibaro_system_fgms001_motion_sensor_temperature_3_1
     - sensor.fibaro_system_fgms001_motion_sensor_temperature_4_1
     - climate.termostato
 
-  Illuminazione:
+luminosity_card:
+  name: Luminosità
+  entities:
     - sensor.fibaro_system_fgms001_motion_sensor_luminance_3_3
     - sensor.fibaro_system_fgms001_motion_sensor_luminance_4_3
 
-  Presenza:
+presence_card:
+  name: Presenza
+  entities:
     - binary_sensor.fibaro_system_fgms001_motion_sensor_sensor_3_0
     - binary_sensor.fibaro_system_fgms001_motion_sensor_sensor_4_0
     - camera.mjpeg_camera
@@ -97,3 +44,72 @@ general_info.card:
   entities:
     - sensor.fibaro_system_fgms001_motion_sensor_general_3_0
     - sensor.fibaro_system_fgms001_motion_sensor_general_4_0
+
+outlets_card:
+  name: Prese
+  entities:
+    - switch.greenwave_powernode_6_port_switch_5_0
+    - switch.greenwave_powernode_6_port_switch_5_0_2
+    - switch.greenwave_powernode_6_port_switch_5_0_3
+    - switch.greenwave_powernode_6_port_switch_5_0_4
+    - switch.greenwave_powernode_6_port_switch_5_0_5
+    - switch.greenwave_powernode_6_port_switch_5_0_6
+
+power_card:
+  name: Potenza
+  entities:
+    - sensor.greenwave_powernode_6_port_power_5_8
+    - sensor.greenwave_powernode_6_port_power_5_8_2
+    - sensor.greenwave_powernode_6_port_power_5_8_3
+    - sensor.greenwave_powernode_6_port_power_5_8_4
+    - sensor.greenwave_powernode_6_port_power_5_8_5
+    - sensor.greenwave_powernode_6_port_power_5_8_6
+
+energy_card:
+  name: Assorbimento
+  entities:
+    - sensor.greenwave_powernode_6_port_energy_5_0
+    - sensor.greenwave_powernode_6_port_energy_5_0_2
+    - sensor.greenwave_powernode_6_port_energy_5_0_3
+    - sensor.greenwave_powernode_6_port_energy_5_0_4
+    - sensor.greenwave_powernode_6_port_energy_5_0_5
+    - sensor.greenwave_powernode_6_port_energy_5_0_6
+
+##############################################################
+#### VIEWS (VISTE)###########################################
+##############################################################
+default_view:
+  view: yes
+  icon: mdi:home
+  entities:
+    - device_tracker.note3_gio
+    - device_tracker.s3_ale
+    - group.meteo
+    - group.temperatura
+    - group.info
+    - group.all_automations
+
+rooms_view:
+  name: Stanze
+  view: yes
+  entities:
+  
+security_view:
+  name: Sicurezza
+  view: yes
+  entities:
+    - group.presence_card
+
+lights_view:
+  name: Luci
+  view: yes
+  entities:
+    - group.luminosity_card
+
+energy_view:
+  name: Energia
+  view: yes
+  entities:
+    - group.outlets_card
+    - group.power_card
+    - group.energy_card
