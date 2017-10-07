@@ -39,12 +39,20 @@ presence_card:
     - binary_sensor.fibaro_system_fgms001_motion_sensor_sensor_4_0
     - camera.mjpeg_camera
  
-general_info.card:
+general_info_card:
   name: Info
   entities:
     - sensor.fibaro_system_fgms001_motion_sensor_general_3_0
     - sensor.fibaro_system_fgms001_motion_sensor_general_4_0
-    
+
+device_tracker_card:
+  name: Dispositivi
+  entities:
+    - device_tracker.note3_ale
+    - device_tracker.oneplus_gio
+    - device_tracker.vera_plus_controller
+    - device_tracker.ubuntuserver
+
 lights_card:
   name: Illuminazione
   entities:
@@ -88,11 +96,10 @@ default_view:
   view: yes
   icon: mdi:home
   entities:
-    - device_tracker.note3_gio
-    - device_tracker.s3_ale
-    - group.meteo
-    - group.temperatura
-    - group.info
+    - group.device_tracker_card
+    - group.weather_card
+    - group.temperature_card
+    - group.general_info_card
     - group.all_automations
 
 rooms_view:
