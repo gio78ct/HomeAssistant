@@ -35,7 +35,7 @@ luminosity_card:
 presence_card:
   name: Presenza
   entities:
-    - binary_sensor.fibaro_system_fgms001_motion_sensor_sensor_3_0
+    - binary_sensor.fibaro_system_fgms001_motion_sensor_sensor
     - binary_sensor.fibaro_system_fgms001_motion_sensor_sensor_4_0
     - camera.mjpeg_camera
  
