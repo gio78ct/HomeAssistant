@@ -108,11 +108,6 @@ default_view:
     - group.temperature_card
     - group.all_automations
 
-rooms_view:
-  name: Stanze
-  view: yes
-  entities:
-  
 security_view:
   name: Sicurezza
   view: yes
@@ -138,6 +133,11 @@ energy_view:
     - group.outlets_card
     - group.power_card
     - group.energy_card
+
+rooms_view:
+  name: Stanze
+  view: yes
+  entities:
 
 devices_view:
   name: Dispositivi
