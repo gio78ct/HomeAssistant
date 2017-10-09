@@ -39,7 +39,7 @@ presence_card:
     - binary_sensor.fibaro_system_fgms001_motion_sensor_sensor_4_0
     - camera.mjpeg_camera
  
-general_info_card:
+devices_info_card:
   name: Info
   entities:
     - sensor.fibaro_system_fgms001_motion_sensor_general
@@ -106,7 +106,6 @@ default_view:
     - device_tracker.oneplus_gio
     - group.weather_card
     - group.temperature_card
-    - group.general_info_card
     - group.all_automations
 
 rooms_view:
@@ -141,3 +140,4 @@ devices_view:
   view: yes
   entities:
     - group.device_tracker_card
+    - group.devices_info_card
