@@ -116,13 +116,16 @@ rooms_view:
 security_view:
   name: Sicurezza
   view: yes
+  icon: mdi:security-home
   entities:
-    - camera.mjpeg_camera
-    - group.presence_card
+   - camera.mjpeg_camera 
+   - group.presence_card
+
 
 lights_view:
   name: Luci
   view: yes
+  icon: mdi:lightbulb-on-outline
   entities:
     - group.luminosity_card
     - group.lights_card
@@ -130,6 +133,7 @@ lights_view:
 energy_view:
   name: Energia
   view: yes
+  icon: mdi:power-plug
   entities:
     - group.outlets_card
     - group.power_card
