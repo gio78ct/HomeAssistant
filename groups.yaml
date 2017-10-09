@@ -67,32 +67,33 @@ lights_card:
 outlets_card:
   name: Prese
   entities:
-    - switch.greenwave_powernode_6_port_switch_5_0
-    - switch.greenwave_powernode_6_port_switch_5_0_2
-    - switch.greenwave_powernode_6_port_switch_5_0_3
-    - switch.greenwave_powernode_6_port_switch_5_0_4
-    - switch.greenwave_powernode_6_port_switch_5_0_5
-    - switch.greenwave_powernode_6_port_switch_5_0_6
+    - switch.greenwave_powernode_6_port_switch 
+    - switch.greenwave_powernode_6_port_switch_2
+    - switch.greenwave_powernode_6_port_switch_3
+    - switch.greenwave_powernode_6_port_switch_4
+    - switch.greenwave_powernode_6_port_switch_5
+    - switch.greenwave_powernode_6_port_switch_6
 
 power_card:
   name: Potenza
   entities:
-    - sensor.greenwave_powernode_6_port_power_5_8
-    - sensor.greenwave_powernode_6_port_power_5_8_2
-    - sensor.greenwave_powernode_6_port_power_5_8_3
-    - sensor.greenwave_powernode_6_port_power_5_8_4
-    - sensor.greenwave_powernode_6_port_power_5_8_5
-    - sensor.greenwave_powernode_6_port_power_5_8_6
+    - sensor.greenwave_powernode_6_port_power 
+    - sensor.greenwave_powernode_6_port_power_2
+    - sensor.greenwave_powernode_6_port_power_3
+    - sensor.greenwave_powernode_6_port_power_4
+    - sensor.greenwave_powernode_6_port_power_5
+    - sensor.greenwave_powernode_6_port_power_6
 
 energy_card:
   name: Assorbimento
   entities:
-    - sensor.greenwave_powernode_6_port_energy_5_0
-    - sensor.greenwave_powernode_6_port_energy_5_0_2
-    - sensor.greenwave_powernode_6_port_energy_5_0_3
-    - sensor.greenwave_powernode_6_port_energy_5_0_4
-    - sensor.greenwave_powernode_6_port_energy_5_0_5
-    - sensor.greenwave_powernode_6_port_energy_5_0_6
+    - sensor.greenwave_powernode_6_port_energy 
+    - sensor.greenwave_powernode_6_port_energy_2
+    - sensor.greenwave_powernode_6_port_energy_3
+    - sensor.greenwave_powernode_6_port_energy_4
+    - sensor.greenwave_powernode_6_port_energy_5
+    - sensor.greenwave_powernode_6_port_energy_6
+
 
 ##############################################################
 #### VIEWS (VISTE)###########################################
