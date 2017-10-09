@@ -136,7 +136,7 @@ switch.greenwave_powernode_6_port_switch_6:
 # info
   sensor.fibaro_system_fgms001_motion_sensor_general_4_0:
     friendly_name: 'Batteria Fibaro A'
-    hidden: true
+    hidden: false
   sensor.fibaro_system_fgms001_motion_sensor_general:
     friendly_name: 'Batteria Fibaro B'
-    hidden: true
+    hidden: false
