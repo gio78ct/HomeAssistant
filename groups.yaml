@@ -120,7 +120,7 @@ security_view:
 lights_view:
   name: Luci
   view: yes
-  icon: mdi:lightbulb-on-outline
+  icon: mdi:lightbulb-on
   entities:
     - group.luminosity_card
     - group.lights_card
