@@ -100,7 +100,8 @@ default_view:
   view: yes
   icon: mdi:home
   entities:
-    - group.device_tracker_card
+    - device_tracker.note3_ale
+    - device_tracker.oneplus_gio
     - group.weather_card
     - group.temperature_card
     - group.general_info_card
@@ -115,6 +116,7 @@ security_view:
   name: Sicurezza
   view: yes
   entities:
+    - camera.mjpeg_camera
     - group.presence_card
 
 lights_view:
