@@ -22,14 +22,14 @@ weather_card:
 temperature_card:
   name: Temperature
   entities:
-    - sensor.fibaro_system_fgms001_motion_sensor_temperature_3_1
+    - sensor.fibaro_system_fgms001_motion_sensor_temperature
     - sensor.fibaro_system_fgms001_motion_sensor_temperature_4_1
     - climate.termostato
 
 luminosity_card:
   name: Luminosità
   entities:
-    - sensor.fibaro_system_fgms001_motion_sensor_luminance_3_3
+    - sensor.fibaro_system_fgms001_motion_sensor_luminance
     - sensor.fibaro_system_fgms001_motion_sensor_luminance_4_3
 
 presence_card:
@@ -42,7 +42,7 @@ presence_card:
 general_info_card:
   name: Info
   entities:
-    - sensor.fibaro_system_fgms001_motion_sensor_general_3_0
+    - sensor.fibaro_system_fgms001_motion_sensor_general
     - sensor.fibaro_system_fgms001_motion_sensor_general_4_0
 
 device_tracker_card:
