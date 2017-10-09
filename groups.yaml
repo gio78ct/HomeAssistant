@@ -51,6 +51,7 @@ device_tracker_card:
     - device_tracker.note3_ale
     - device_tracker.oneplus_gio
     - device_tracker.vera_plus_controller
+    - device_tracker.ipcam
     - device_tracker.ubuntuserver
     - device_tracker.tv_lg_47la660s
     - device_tracker.wii
