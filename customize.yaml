@@ -26,20 +26,22 @@ light.hue_white_lamp_2:
   friendly_name: 'Bagno grande'
 
 # sensors
-  sensor.fibaro_system_fgms001_motion_sensor_temperature_3_1:
-    friendly_name: 'Andrea'
-  sensor.fibaro_system_fgms001_motion_sensor_temperature_4_1:
-    friendly_name: 'Salone'
-  sensor.fibaro_system_fgms001_motion_sensor_luminance_3_3:
-    friendly_name: 'Andrea'
-  sensor.fibaro_system_fgms001_motion_sensor_luminance_4_3:
-    friendly_name: 'Salone'
-  binary_sensor.fibaro_system_fgms001_motion_sensor_sensor_3_0:
-    friendly_name: 'Andrea'
-  binary_sensor.fibaro_system_fgms001_motion_sensor_sensor_4_0:
-    friendly_name: 'Salone'
-  climate.termostato:
-    friendly_name: 'Termostato Netatmo'
+sensor.fibaro_system_fgms001_motion_sensor_temperature_3_1:
+  friendly_name: 'Andrea'
+sensor.fibaro_system_fgms001_motion_sensor_temperature_4_1:
+  friendly_name: 'Salone'
+sensor.fibaro_system_fgms001_motion_sensor_luminance_3_3:
+  friendly_name: 'Andrea'
+sensor.fibaro_system_fgms001_motion_sensor_luminance_4_3:
+  friendly_name: 'Salone'
+binary_sensor.fibaro_system_fgms001_motion_sensor_sensor_3_0:
+  friendly_name: 'Andrea'
+binary_sensor.fibaro_system_fgms001_motion_sensor_sensor_4_0:
+  friendly_name: 'Salone'
+
+climate.termostato:
+  friendly_name: 'Termostato Netatmo'
+    
 # power
 sensor.greenwave_powernode_6_port_power:
   friendly_name: 'Presa 1'
