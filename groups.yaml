@@ -133,3 +133,9 @@ energy_view:
     - group.outlets_card
     - group.power_card
     - group.energy_card
+
+devices_view:
+  name: Dispositivi
+  view: yes
+  entities:
+    - group.device_tracker_card
