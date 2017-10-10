@@ -65,12 +65,28 @@ come ultima riga incollare:
 Edit your configuration.yaml and add the new certificate to the http section:
 
 configuration.yaml
+Change ALL permissions for ownership over to homeassistant for the entire dehydrated directory
+
+sudo chown -R homeassistant:homeassistant dehydrated/Change ALL permissions for ownership over to homeassistant for the entire dehydrated directory
+
+sudo chown -R homeassistant:homeassistant dehydrated/
+
+Change ALL permissions for ownership over to homeassistant for the entire dehydrated directory
+
+sudo chown -R homeassistant:homeassistant dehydrated/Change ALL permissions for ownership over to homeassistant for the entire dehydrated directory
+
+sudo chown -R homeassistant:homeassistant dehydrated/
 
 http:
+
   api_password: !secret hass_pass
+  
   ssl_certificate: /home/pi/dehydrated/certs/gio78.duckdns.org/fullchain.pem
+  
   ssl_key: /home/pi/dehydrated/certs/gio78.duckdns.org/privkey.pem
+  
   base_url: gio78.duckdns.org:8123
+  
   
   Finally restart HomeAssistant
 
