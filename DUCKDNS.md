@@ -82,6 +82,6 @@ sudo chown -R homeassistant:homeassistant dehydrated/
   
   Finally restart HomeAssistant
 
-$> sudo systemctl restart home-assistant@homeassistant.service
+$> sudo service home-assistant restart
 
 Your HomeAssistant should now be available via https://gio78.duckdns.org:8123.
