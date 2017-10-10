@@ -24,6 +24,10 @@ http:
   base_url: !secret base_url
   ip_ban_enabled: True
   login_attempts_threshold: 3
+  
+# device trackers (se non utilizzato apposito file *.yaml)
+device_tracker:
+  - platform: owntracks_http  
 
 # Checks for available updates
 updater:
