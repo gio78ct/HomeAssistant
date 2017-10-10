@@ -6,9 +6,9 @@ Esso si occuperà anche di rinnovare automaticamente i certificati di LET'S ENCR
 https://www.splitbrain.org/blog/2017-08/10-homeassistant_duckdns_letsencrypt
 
 ## GUIDA per AIO installer (H.A. gira su virtualenv)
-Set all this up via the pi user using sudo. Once you get to the point of creating the hook.sh file, you must make it executable. Then, change ALL permissions for ownership over to homeassistant for the entire dehydrated directory
+Set all this up via the pi user using sudo.
 
-sudo chown -R homeassistant:homeassistant dehydrated/
+Once you get to the point of creating the hook.sh file, you must make it executable.
 
 # GENERARE I CERTIFICATI:
 Time to run dehydrated.
@@ -43,11 +43,15 @@ OK
  + Done!
 That's it. We now have a valid certificate!
 
+AND NOW... Change ALL permissions for ownership over to homeassistant for the entire dehydrated directory
+
+sudo chown -R homeassistant:homeassistant dehydrated/
+
 ## Automate Renewing
 
 Let'sEncrypt certificates expire after 90 days, so we need to automatically renew them. We simply call dehydrated via cron on every 1st day of the month:
 
-You will ALSO need to add the cronjob to the homeassistant user because the pi user will not have permissions to the hook.sh.
+You will need to add the cronjob to the homeassistant user because the pi user will not have permissions to the hook.sh:
 
 sudo su -s /bin/bash homeassistant
 
