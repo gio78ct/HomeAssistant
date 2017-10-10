@@ -24,7 +24,11 @@ http:
   base_url: !secret base_url
   ip_ban_enabled: True
   login_attempts_threshold: 3
-  
+
+duckdns:
+  domain: !secret duckdns_domain
+  access_token: !secret duckdns_access_token
+
 # device trackers (se non utilizzato apposito file *.yaml)
 device_tracker:
   - platform: owntracks_http  
