@@ -1,4 +1,4 @@
-#DUCKDNS:
+# DUCKDNS:
 Dalla versione 0.55 esiste il componente "duckdns".
 https://home-assistant.io/components/duckdns/
 Attivare il componente in luogo dell'installazione. 
@@ -10,20 +10,20 @@ Set all this up via the pi user using sudo. Once you get to the point of creatin
 
 sudo chown -R homeassistant:homeassistant dehydrated/
 
-GENERARE I CERTIFICATI:
+# GENERARE I CERTIFICATI:
 Time to run dehydrated.
 
 First, register a new private key with letsencrypt:
 
 $> ./dehydrated --register  --accept-terms
-# INFO: Using main config file /home/homeassistant/dehydrated/config
+#INFO: Using main config file /home/homeassistant/dehydrated/config
  + Generating account key...
  + Registering account key with ACME server...
  + Done!
 Then generate the certificate:
 
 $ ./dehydrated -c
-# INFO: Using main config file /home/homeassistant/dehydrated/config
+#INFO: Using main config file /home/homeassistant/dehydrated/config
 Processing myhome.duckdns.org
  + Signing domains...
  + Generating private key...
@@ -41,7 +41,7 @@ OK
  + Done!
 That's it. We now have a valid certificate!
 
-#Automate Renewing
+## Automate Renewing
 
 Let'sEncrypt certificates expire after 90 days, so we need to automatically renew them. We simply call dehydrated via cron on every 1st day of the month:
 
@@ -54,7 +54,7 @@ crontab -e
 come ultima riga incollare: 
 0 1 1 * * /home/pi/dehydrated/dehydrated -c
 
-#Reconfigure HomeAssistant
+## Reconfigure HomeAssistant
 
 Edit your configuration.yaml and add the new certificate to the http section:
 
