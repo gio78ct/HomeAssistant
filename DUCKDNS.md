@@ -65,6 +65,7 @@ come ultima riga incollare:
 Edit your configuration.yaml and add the new certificate to the http section:
 
 configuration.yaml
+
 http:
   api_password: !secret hass_pass
   ssl_certificate: /home/pi/dehydrated/certs/gio78.duckdns.org/fullchain.pem
