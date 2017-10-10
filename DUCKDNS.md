@@ -5,7 +5,7 @@ Attivare il componente in luogo dell'installazione.
 Esso si occuperà anche di rinnovare automaticamente i certificati di LET'S ENCRYPT ogni 90 giorni.
 https://www.splitbrain.org/blog/2017-08/10-homeassistant_duckdns_letsencrypt
 
-GUIDA per AIO installer (H.A. gira su virtualenv)
+## GUIDA per AIO installer (H.A. gira su virtualenv)
 Set all this up via the pi user using sudo. Once you get to the point of creating the hook.sh file, you must make it executable. Then, change ALL permissions for ownership over to homeassistant for the entire dehydrated directory
 
 sudo chown -R homeassistant:homeassistant dehydrated/
