@@ -16,6 +16,7 @@ Time to run dehydrated.
 First, register a new private key with letsencrypt:
 
 $> ./dehydrated --register  --accept-terms
+
 #INFO: Using main config file /home/homeassistant/dehydrated/config
  + Generating account key...
  + Registering account key with ACME server...
@@ -23,6 +24,7 @@ $> ./dehydrated --register  --accept-terms
 Then generate the certificate:
 
 $ ./dehydrated -c
+
 #INFO: Using main config file /home/homeassistant/dehydrated/config
 Processing myhome.duckdns.org
  + Signing domains...
