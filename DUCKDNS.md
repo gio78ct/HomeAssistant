@@ -17,7 +17,7 @@ sudo su -s /bin/bash homeassistant
 crontab -e
 
 come ultima riga incollare: 
-0 1 1 * * /home/homeassistant/dehydrated/dehydrated -c
+0 1 1 * * /home/pi/dehydrated/dehydrated -c
 
 #Reconfigure HomeAssistant
 
