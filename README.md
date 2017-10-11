@@ -23,3 +23,6 @@ Vedi il documento "HomeAssistant/DUCKDNS_LETSENCRYPT.md"
 
 ## SSL: Let's Encrypt
 Vedi sopra "Dynamic DNS: duckdns.org"
+
+## TV LG-47LA660S
+Vedi la guida "TV_LG_LA660S.md"
