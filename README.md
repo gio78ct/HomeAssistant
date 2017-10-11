@@ -17,6 +17,9 @@ hassctl zwave - Follow the Open Z-Wave logs
 https://www.nicolapreo.it/installare-home-assistant/
 
 ## Dynamic DNS: duckdns.org
-https://www.duckdns.org/install.jsp?tab=pi&domain=gio78
+A partire dalla vers. 0.55 è integrato in HomeAssistant come componente; lo stesso gestisce anche la creazione e il rinnovo automatico dei certificati SSL di Let's Encrypt.
+Vedi il documento "HomeAssistant/DUCKDNS_LETSENCRYPT.md" 
+
 
 ## SSL: Let's Encrypt
+Vedi sopra "Dynamic DNS: duckdns.org"
