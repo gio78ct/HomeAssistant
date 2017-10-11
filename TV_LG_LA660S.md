@@ -1,5 +1,5 @@
-# titolo
-cambiare utente in "homeasssitant"
+# comandi da linea di comando con lo script "lgtv.py"
+cambiare utente in "homeassitant"
 
 sudo su -s /bin/bash/ homeassistant
 
