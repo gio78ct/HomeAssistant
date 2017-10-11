@@ -11,12 +11,12 @@
 
   trigger:
     - platform: state
-      entity_id: 'binary_sensor.fibaro_system_fgms001_motion_sensor_sensor_3_0'
+      entity_id: 'binary_sensor.fibaro_system_fgms001_motion_sensor_sensor'
       from: 'off'
       to: 'on'
   condition:
     - condition: state
-      entity_id: 'device_tracker.note3_gio'
+      entity_id: 'device_tracker.oneplus_gio'
       state: 'not_home'
   action:
     - service: notify.telegram
@@ -24,7 +24,7 @@
         message: "Ho rilevato una presenza nella camera di Andrea mentre eri fuori casa!"
         title: "SICUREZZA-nmap:"
     - service: switch.turn_on
-      entity_id: 'switch.greenwave_powernode_6_port_switch_5_0_6'
+      entity_id: 'switch.greenwave_powernode_6_port_switch_6'
 
 # Accende l'abatjour, se il sole è già tramontato e viene rilevata presenza in Salone
 - alias: 'Abatjour automatica'
@@ -42,7 +42,7 @@
       state: 'below_horizon'
   action:
     - service: switch.turn_on
-      entity_id: 'switch.greenwave_powernode_6_port_switch_5_0_6'
+      entity_id: 'switch.greenwave_powernode_6_port_switch_6'
 
 #################################################################
 ## HASS Related
