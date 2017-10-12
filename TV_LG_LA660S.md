@@ -34,3 +34,27 @@ dare un'occhiata anche a questo elenco comandi: https://github.com/ubaransel/lgc
 27 - Channel UP (+)
 
 28 - Channel DOWN (-)
+
+# timer di spegnimento
+
+## PROGETTO 1:
+===========
+### 1.a) Pulsante di spegnimento;
+### 1.b) Creare una "card" con un timer spegnimento (creare automazione che spegne la tv oltre una certa soglia impostabile di utilizzo)
+
+Il punto 1.a) l'ho ottenuto inserendo in conf.yaml:
+
+switch:
+  platform: command_line
+  switches:
+    lgtv_poweroff:
+      command_off: "python3 /srv/homeassistant/homeassistant_venv/lgtv.py 1"
+      friendly_name: TV Salone
+
+Lo stesso risultato si può ottenere da:
+shell_command:
+  lgtv_timer_poweroff: python3 /srv/homeassistant/homeassistant_venv/lgtv.py 1
+
+oppure invocando lo stesso servizio da developer tools
+
+per il punto 1.b) si può partire dall'automazione:
