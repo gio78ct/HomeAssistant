@@ -1,6 +1,5 @@
 # comandi da linea di comando con lo script "lgtv.py"
-Lo script è tratto e riadattato dalle seguenti fonti:
-https://github.com/ubaransel/lgcommander; http://harizanov.com/2013/12/control-lg-smart-tv-over-the-internet-using-a-raspberry-pi/; 
+Lo script è tratto e riadattato dalle seguenti fonti: http://harizanov.com/2013/12/control-lg-smart-tv-over-the-internet-using-a-raspberry-pi/; 
 
 cambiare utente in "homeassitant"
 
