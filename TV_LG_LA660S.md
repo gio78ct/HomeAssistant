@@ -58,3 +58,21 @@ shell_command:
 oppure invocando lo stesso servizio da developer tools.
 
 Per il punto 1.b) si può partire dall'automazione:
+
+input_number:
+  tv_minutes:
+    name: Timer TV Salone
+    initial: 20
+    min: 10
+    max: 120
+    step: 10
+
+automation:
+  - alias: "Timer TV salone"
+    initial_state: 'on'
+    trigger:
+      platform: state
+      entity_id: input_number.tv_minutes
+    action:
+#delay: '00:{{ states.input_number.tv_minutes.state }}:00'
+      service: shell_command.lgtv_timer_poweroff
