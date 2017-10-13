@@ -1,7 +1,7 @@
 ##############################################################
 #### CARDS (SCHEDE)###########################################
 ##############################################################
- 
+
 weather_card:
   name: Meteo
   entities:
@@ -18,20 +18,20 @@ weather_card:
 #    - sensor.dark_sky_icon
 #    - sensor.dark_sky_temperature
 #    - sensor.dark_sky_humidity
- 
+   
 temperature_card:
   name: Temperature
   entities:
     - sensor.fibaro_system_fgms001_motion_sensor_temperature
     - sensor.fibaro_system_fgms001_motion_sensor_temperature_4_1
     - climate.termostato
- 
+
 luminosity_card:
   name: Luminosità
   entities:
     - sensor.fibaro_system_fgms001_motion_sensor_luminance
     - sensor.fibaro_system_fgms001_motion_sensor_luminance_4_3
- 
+
 presence_card:
   name: Presenza
   entities:
@@ -44,7 +44,13 @@ devices_info_card:
   entities:
     - sensor.fibaro_system_fgms001_motion_sensor_general
     - sensor.fibaro_system_fgms001_motion_sensor_general_4_0
- 
+
+family_card:
+  name:Famiglia
+  entities:
+    - device_tracker.note3_ale
+    - device_tracker.oneplus_gio
+
 device_tracker_card:
   name: Dispositivi
   entities:
@@ -56,13 +62,22 @@ device_tracker_card:
     - device_tracker.tv_lg_47la660s
     - device_tracker.wii
     - device_tracker.playstation3
- 
+
+multimedia_card:
+  name: Multimedia
+  entities:
+    - input_number.tv_minutes
+    - switch.lgtv_poweroff
+    - media_player.lg_tv_remote
+    - media_player.kitchenbox
+    - media_player.kitchenboxdlna
+
 lights_card:
   name: Illuminazione
   entities:
     - light.hue_white_lamp_1
     - light.hue_white_lamp_2
- 
+
 outlets_card:
   name: Prese
   entities:
@@ -72,7 +87,7 @@ outlets_card:
     - switch.greenwave_powernode_6_port_switch_4
     - switch.greenwave_powernode_6_port_switch_5
     - switch.greenwave_powernode_6_port_switch_6
- 
+
 power_card:
   name: Potenza
   entities:
@@ -82,7 +97,7 @@ power_card:
     - sensor.greenwave_powernode_6_port_power_4
     - sensor.greenwave_powernode_6_port_power_5
     - sensor.greenwave_powernode_6_port_power_6
- 
+
 energy_card:
   name: Assorbimento
   entities:
@@ -92,7 +107,7 @@ energy_card:
     - sensor.greenwave_powernode_6_port_energy_4
     - sensor.greenwave_powernode_6_port_energy_5
     - sensor.greenwave_powernode_6_port_energy_6
- 
+
 ##############################################################
 #### VIEWS (VISTE)###########################################
 ##############################################################
@@ -106,16 +121,16 @@ default_view:
     - group.weather_card
     - group.temperature_card
     - group.all_automations
- 
+
 security_view:
   name: Sicurezza
   view: yes
   icon: mdi:security-home
   entities:
-   - camera.mjpeg_camera
+   - camera.mjpeg_camera 
    - group.presence_card
- 
- 
+
+
 lights_view:
   name: Luci
   view: yes
@@ -123,7 +138,7 @@ lights_view:
   entities:
     - group.luminosity_card
     - group.lights_card
- 
+
 energy_view:
   name: Energia
   view: yes
@@ -132,13 +147,13 @@ energy_view:
     - group.outlets_card
     - group.power_card
     - group.energy_card
- 
+
 rooms_view:
   name: Stanze
   view: yes
   icon: mdi:floor-plan
   entities:
- 
+
 devices_view:
   name: Dispositivi
   view: yes
@@ -146,3 +161,4 @@ devices_view:
   entities:
     - group.device_tracker_card
     - group.devices_info_card
+    - group.multimedia_card
