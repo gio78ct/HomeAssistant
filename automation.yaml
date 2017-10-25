@@ -58,21 +58,15 @@
 #################################################################
 
 # TV ########################
-- alias: tv salone limit
+- alias: "Timer TV LG Salone"
+  hide_entity: True
+  initial_state: 'on'
   trigger:
-    - platform: state
-      entity_id: input_number.tv_minutes
+    platform: state
+    entity_id: input_number.tv_minutes
   action:
-    - service: python_scripts.lgtv
-
-input_number:
-  tv_minutes:
-    name: Timer TV
-    initial: 20
-    min: 0
-    max: 120
-    step: 10
-    
-
-python_scripts:
-  lgtv: 'irsend SEND_ONCE DELONGHI AC_{{ states.input_number.tv_minutes.state }}_AUTO'
+    - service: script.timer_tv_script
+    - service: persistent_notification.create
+      data_template:
+        message: "Impostato timer di spegnimento fra {{ (states.input_number.tv_minutes.state | int) }} minuti"
+        title: "TV LG Salone"
