@@ -1,18 +1,18 @@
-- timer_tv_script:
-    alias: 'script timer tv'
-    sequence:
+timer_tv_script:
+  alias: 'script timer tv'
+  sequence:
 #      - service: persistent_notification.create
 #        data:
 #          message: "avviso 1: lo script è stato invocato"
 #          title: "timer_lgtv"
-      - delay: '00:{{ states.input_number.tv_minutes.state | int }}:00'
+    - delay: '00:{{ states.input_number.tv_minutes.state | int }}:00'
 #      - service: persistent_notification.create
 #        data:
 #          message: "avviso 2: il delay dello script ha funzionato"
 #          title: "timer_lgtv"
-      - service: shell_command.lgtv_timer_poweroff 
-      - delay: '00:00:03'
-      - service: shell_command.lgtv_timer_poweroff
+    - service: shell_command.lgtv_timer_poweroff
+    - delay: '00:00:03'
+    - service: shell_command.lgtv_timer_poweroff
 #      - service: persistent_notification.create
 #        data:
 #          message: "avviso 3: lo shell_command è stato innescato"
