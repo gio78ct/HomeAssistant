@@ -3,19 +3,11 @@ homeassistant:
   latitude: !secret home_latitude
   longitude: !secret home_longitude
   elevation: !secret home_elevation
-  
+
   unit_system: metric
   time_zone: Europe/Rome
-  
   customize: !include customize.yaml
 
-# Enables the frontend
-frontend:
-panel_iframe:
-  router:
-    title: 'TP-LINK Router'
-    icon: 'mdi:router-wireless'
-    url: 'http://gio78.duckdns.org'
 
 http:
   api_password: !secret http_password
@@ -29,100 +21,58 @@ duckdns:
   domain: !secret duckdns_domain
   access_token: !secret duckdns_access_token
 
-# device trackers (se non utilizzato apposito file *.yaml)
-device_tracker:
-  - platform: owntracks_http  
-
-# Checks for available updates
+frontend:
+config:
 updater:
-
-# Discover some devices automatically
+conversation:
+sun:
 discovery:
 
-# Allows you to issue voice commands from the frontend in enabled browsers
-conversation:
-
-# Enables support for tracking state changes over time.
-history:
-  include:
-    domains:
-      - sensor
-      - binary_sensor
-      - switch
-      - climate
-  exclude:
-    entities:
-      - group.temperature
-      - sensor.greenwave_powernode_6_port_previous_reading_5_1
-      - sensor.greenwave_powernode_6_port_previous_reading_5_1_2
-      - sensor.greenwave_powernode_6_port_previous_reading_5_1_3
-      - sensor.greenwave_powernode_6_port_previous_reading_5_1_4
-      - sensor.greenwave_powernode_6_port_previous_reading_5_1_5
-      - sensor.greenwave_powernode_6_port_previous_reading_5_1_6
-      - sensor.greenwave_powernode_6_port_previous_reading_5_9
-      - sensor.greenwave_powernode_6_port_previous_reading_5_9_2
-      - sensor.greenwave_powernode_6_port_previous_reading_5_9_3
-      - sensor.greenwave_powernode_6_port_previous_reading_5_9_4
-      - sensor.greenwave_powernode_6_port_previous_reading_5_9_5
-      - sensor.greenwave_powernode_6_port_previous_reading_5_9_6
-      - sensor.fibaro_system_fgms001_motion_sensor_general_3_0
-      - sensor.fibaro_system_fgms001_motion_sensor_general_4_0
-      - sensor.pws_feelslike_c
-      - sensor.pws_wind_kph
-      - sensor.pws_wind_dir
-      - sensor.pws_relative_humidity
-      - sensor.pws_precip_today_metric
-      - sensor.pws_location
-      - sensor.pws_observation_time
-
-# View all events in a logbook
-logbook:
-  include:
-    domains:
-      - sensor
-      - binary_sensor
-      - switch
-      - climate
-  exclude:
-    entities:
-      - group.temperature
-      - group.prese
-      - group.energia
-      - group.potenza
-      - group.meteo
-      - group.info
-      - sensor.fibaro_system_fgms001_motion_sensor_general_3_0
-      - sensor.fibaro_system_fgms001_motion_sensor_general_4_0
-      - sensor.pws_feelslike_c
-      - sensor.pws_wind_kph
-      - sensor.pws_wind_dir
-      - sensor.pws_relative_humidity
-      - sensor.pws_precip_today_metric
-      - sensor.pws_location
-      - sensor.pws_observation_time
-
-# Track the sun
-sun:
 
 
 # Text to speech
 tts:
-  platform: google
+  - platform: google
+  - platform: picotts
+    language: 'it-IT'
 
+# MQTT CLOUDMQTT ####################
+#mqtt:
+#  broker: m20.cloudmqtt.com
+#  port: 10540
+#  client_id: home-assistant-1
+#  username: ha
+#  password: !secret mqtt_password
+#  keepalive: 60
 
+# MQTT mosquitto ####################
 mqtt:
-  broker: 127.0.0.1
+  broker: 192.168.1.10
   port: 1883
-  client_id: home-assistant-1
-  username: pi
+  client_id: home-assistant-mosquitto-1
+  username: !secret mqtt_username
   password: !secret mqtt_password
+
+# Z-WAVE
+zwave:
+  usb_path: /dev/ttyAMA0
+  config_path: /srv/homeassistant/src/python-openzwave/openzwave/config
+  polling_interval: 30000
 
 # TERMOSTATO NETATMO
 netatmo:
   api_key: !secret netatmo_thermostat_api_key
   secret_key: !secret netatmo_thermostat_secret_key
   username: gio78ct@gmail.com
-  password: !secret netatmo_thermostat_password
+  password: !secret netatmo_thermostat_password 
+  discovery: False
+
+climate:
+  platform: netatmo
+#  relay: netatmo_relay
+#  thermostat:
+#    - Termostato Netatmo
+
 
 # IP CAMERA
 camera:
@@ -130,33 +80,37 @@ camera:
     mjpeg_url: !secret wansview_camera_mjpeg_url
     username: admin
     password: !secret wansview_camera_password
-##   authentication: digest
+    authentication: digest
 
-# Z-WAVE
-zwave:
-# config_path: /usr/local/lib/python3.4/dist-packages/libopenzwave-0.3.1-py3.4-linux-armv6l.egg/config
-  config_path: /srv/homeassistant/homeassistant_venv/src/python-openzwave/openzwave/config
-  usb_path: /dev/ttyAMA0
-  polling_interval: 60000
-  debug:
-  #customize:
-  #sensor.greenwave_powernode_6_port_energy_10:
-  #polling_intensity: 1
+# USB CAMERA
+  - platform: local_file
+    name: MS LifeCam HD-3000
+    file_path: /tmp/lastsnap.jpg
+
+# USB CAMERA 2
+  - platform: mjpeg
+    mjpeg_url: http://localhost:8081
+    name: USB Camera
 
 # LG TV 47 pollici Salone
-media_player:
-  - platform: lg_netcast
-    host: 192.168.1.47
-    access_token: !secret tvlg_salone_token
-    
-    
+#media_player:
+#  - platform: lg_netcast
+#    host: 192.168.1.47
+#    access_token: 278540
+#    name: "TV Salone"
+#  - platform: squeezebox
+#    host: 192.168.1.9
+#    port: 9000
+#    username:
+#    password:
+
 #######################################
 # NOTIFICATION ########################
 #######################################
 notify:
-  - platform: telegram
-    name: telegram
-    chat_id: 300989693
+#  - platform: telegram
+#    name: telegram
+#    chat_id: 300989693
 
   - name: google push
     platform: html5
@@ -164,20 +118,43 @@ notify:
     gcm_sender_id: '134878454454'
 
 
-telegram_bot:
-  platform: polling
-  api_key: 223675455:AAFN4hBtvOjPAbVI7h5fUlYXfhgvFipdbII
-  allowed_chat_ids:
-    - 300989693
+#telegram_bot:
+#  platform: polling
+#  api_key: 223675455:AAFN4hBtvOjPAbVI7h5fUlYXfhgvFipdbII
+#  allowed_chat_ids:
+#    - 300989693
+
+#################################################################
+## AUTOMATIONS
+#################################################################
+
+
+#################################################################
+# SCRIPTS #######################################################
+#################################################################
+
+
 
 ########################################
 # INCLUDES #############################
 ########################################
-camera: !include_dir_list cameras/
-automation: !include automation.yaml
-group: !include groups.yaml
-sensor: !include_dir_list sensors/
+#automation: !include_dir_merge_list automation/
+automation: !include automations.yaml
+binary_sensor: !include binary_sensors.yaml
+# camera: !include_dir_list cameras/
 device_tracker: !include device_trackers.yaml
-scene: !include scenes.yaml
-# secret: !include secrets.yaml
-zone: !include_dir_list zones/
+group: !include groups.yaml
+input_boolean: !include misc/input_boolean.yaml
+input_number: !include misc/input_number.yaml
+# input_select: !include misc/input_select.yaml
+# scene: !include scenes.yaml
+#script: !include scripts.yaml
+script: !include_dir_merge_list scripts/
+#sensor: !include_dir_list sensors/
+sensor: !include_dir_merge_list sensors/
+shell_command: !include_dir_merge_named shell_command
+switch: !include switches.yaml
+#weather: !include_dir_list weather/
+zone: !include_dir_merge_list zones/
+logbook: !include logbook.yaml
+history: !include history.yaml
