@@ -23,39 +23,49 @@ temperature_card:
   name: Temperature
   entities:
     - sensor.fibaro_system_fgms001_motion_sensor_temperature
-    - sensor.fibaro_system_fgms001_motion_sensor_temperature_4_1
+    - sensor.fibaro_system_fgms001_motion_sensor_temperature_2
     - climate.termostato
 
 luminosity_card:
   name: Luminosità
   entities:
     - sensor.fibaro_system_fgms001_motion_sensor_luminance
-    - sensor.fibaro_system_fgms001_motion_sensor_luminance_4_3
+    - sensor.fibaro_system_fgms001_motion_sensor_luminance_2
 
 presence_card:
   name: Presenza
   entities:
     - binary_sensor.fibaro_system_fgms001_motion_sensor_sensor
-    - binary_sensor.fibaro_system_fgms001_motion_sensor_sensor_4_0
+    - binary_sensor.fibaro_system_fgms001_motion_sensor_sensor_2
     - camera.mjpeg_camera
- 
+    - camera.ms_lifecam_hd3000 
+    - camera.usb_camera
+
 devices_info_card:
   name: Info
   entities:
     - sensor.fibaro_system_fgms001_motion_sensor_general
-    - sensor.fibaro_system_fgms001_motion_sensor_general_4_0
+    - sensor.fibaro_system_fgms001_motion_sensor_general_2
 
 family_card:
-  name:Famiglia
+  name: Famiglia
   entities:
     - device_tracker.note3_ale
-    - device_tracker.oneplus_gio
+    - device_tracker.phone_oneplus
+
+gio_locations_card:
+  name: Gio
+  entities:
+    - device_tracker.phone_oneplus
+    - sensor.batteria_telefono_gio
+    - sensor.find_gio_location
+    - sensor.find_gio_time
 
 device_tracker_card:
   name: Dispositivi
   entities:
 #    - device_tracker.note3_ale
-#    - device_tracker.oneplus_gio
+#    - device_tracker.phone_oneplus 
     - device_tracker.vera_plus_controller
     - device_tracker.ipcam
     - device_tracker.ubuntuserver
@@ -63,11 +73,17 @@ device_tracker_card:
     - device_tracker.wii
     - device_tracker.playstation3
 
+parental_card:
+  name: Parental
+  entities:
+    - input_boolean.tv_minutes
+    - input_number.tv_minutes
+#    - switch.lgtv_poweroff
+
+
 multimedia_card:
   name: Multimedia
   entities:
-    - input_number.tv_minutes
-    - switch.lgtv_poweroff
     - media_player.lg_tv_remote
     - media_player.kitchenbox
     - media_player.kitchenboxdlna
@@ -75,8 +91,9 @@ multimedia_card:
 lights_card:
   name: Illuminazione
   entities:
-    - light.hue_white_lamp_1
-    - light.hue_white_lamp_2
+    - light.abatjour_letto  
+    - light.lampadario_bagno_piccolo
+    - switch.greenwave_powernode_6_port_switch_6
 
 outlets_card:
   name: Prese
@@ -86,7 +103,7 @@ outlets_card:
     - switch.greenwave_powernode_6_port_switch_3
     - switch.greenwave_powernode_6_port_switch_4
     - switch.greenwave_powernode_6_port_switch_5
-    - switch.greenwave_powernode_6_port_switch_6
+#    - switch.greenwave_powernode_6_port_switch_6
 
 power_card:
   name: Potenza
@@ -117,10 +134,12 @@ default_view:
 # icon: mdi:castle
   entities:
     - device_tracker.note3_ale
-    - device_tracker.oneplus_gio
+    - device_tracker.phone_oneplus
+    - group.gio_locations_card
     - group.weather_card
     - group.temperature_card
     - group.all_automations
+    - input_select.who_cooks
 
 security_view:
   name: Sicurezza
@@ -160,5 +179,6 @@ devices_view:
   icon: mdi:cellphone-link
   entities:
     - group.device_tracker_card
-    - group.devices_info_card
+    - group.parental_card
     - group.multimedia_card
+    - group.devices_info_card
