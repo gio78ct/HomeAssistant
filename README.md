@@ -30,3 +30,6 @@ Vedi la guida "TV_LG_LA660S.md"
 ## MQTT - Mosquitto
 In debian scretch non era installabile facilmente. Ho dovuto dare "aptitude install" invece di "apt install", seguito da vari "n" finchè la procedura non mi proponeva di installare dipendenze e applicazione aggiornati.
 Poi ho seguito la guida https://www.youtube.com/watch?v=AsDHEDbyLfg
+
+## Geofencing
+Devices that are in the zone ‘Home’ will not appear on the map in the Home Assistant UI.
