@@ -1,0 +1,168 @@
+#################################################################
+## Presence
+#################################################################
+
+#################################################################
+## Security System
+#################################################################
+- alias: 'Intrusione'
+  initial_state: False
+  hide_entity: False
+
+  trigger:
+    - platform: state
+      entity_id: 'binary_sensor.fibaro_system_fgms001_motion_sensor_sensor'
+      from: 'off'
+      to: 'on'
+  condition:
+    - condition: state
+      entity_id: 'device_tracker.oneplus_gio'
+      state: 'not_home'
+  action:
+    - service: notify.telegram
+      data:
+        message: "Ho rilevato una presenza nella camera di Andrea mentre eri fuori casa!"
+        title: "SICUREZZA-nmap:"
+    - service: switch.turn_on
+      entity_id: 'switch.greenwave_powernode_6_port_switch_6'
+
+#################################################################
+## HASS Related
+#################################################################
+
+#################################################################
+## Home Automation Related
+#################################################################
+
+# Lights ###
+
+- alias: Turn on bathroom light when there is movement dimming in the night
+  initial_state: 'on'
+  hide_entity: False
+  trigger:
+    platform: state
+    entity_id: binary_sensor.fibaro_system_fgms001_motion_sensor_sensor
+    to: 'on'
+  condition:
+    condition: and
+    conditions:
+      - condition: state
+        entity_id: light.lampadario_bagno
+        state: 'off'
+      - condition: or
+        conditions:
+          - condition: time
+            after: '23:00:00'
+            before: '05:40:00'
+          - condition: time
+            after: '23:00:00'
+            before: '07:30:00'
+            weekday:
+              - sat
+              - sun
+              - mon
+  action:
+    - service: homeassistant.turn_on
+      entity_id: light.lampadario_bagno
+      data:
+        brightness: 15
+
+- alias: Turn off bathroom light 15 seconds after last movement
+  initial_state: 'on'
+  trigger:
+    platform: state
+    entity_id: binary_sensor.fibaro_system_fgms001_motion_sensor_sensor
+    to: 'off'
+    for:
+      seconds: 15
+  condition:
+    condition: and
+    conditions:
+      - condition: state
+        entity_id: light.lampadario_bagno
+        state: 'off'
+      - condition: or
+        conditions:
+          - condition: time
+            after: '23:00:00'
+            before: '05:40:00'
+          - condition: time
+            after: '23:00:00'
+            before: '07:30:00'
+            weekday:
+              - sat
+              - sun
+              - mon
+  action:
+    service: homeassistant.turn_off
+    entity_id: light.lampadario_bagno
+
+############################################################################
+
+- alias: Turn on saloon table lamp when there is movement in the night
+  initial_state: 'on'
+  hide_entity: False
+  trigger:
+    platform: state
+    entity_id: binary_sensor.fibaro_system_fgms001_motion_sensor_sensor_2
+    to: 'on'
+  condition:
+    condition: and
+    conditions:
+      - condition: state
+        entity_id: switch.greenwave_powernode_6_port_switch_6
+        state: 'off'
+      - condition: and
+        conditions:
+          - condition: time
+            after: '00:00:00'
+          - condition: state
+            entity_id: sun.sun
+            state: below_horizon         
+  action:
+    service: homeassistant.turn_on
+    entity_id: switch.greenwave_powernode_6_port_switch_6
+
+- alias: Turn off saloon table lamp 15 seconds after last movement
+  initial_state: 'on'
+  trigger:
+    platform: state
+    entity_id: binary_sensor.fibaro_system_fgms001_motion_sensor_sensor_2
+    to: 'off'
+    for:
+      seconds: 15
+  condition:
+    condition: and
+    conditions:
+      - condition: state
+        entity_id: switch.greenwave_powernode_6_port_switch_6
+        state: 'off'
+      - condition: and
+        conditions:
+          - condition: time
+            after: '00:00:00'
+          - condition: state
+            entity_id: sun.sun
+            state: below_horizon
+  action:
+    service: homeassistant.turn_off
+    entity_id: switch.greenwave_powernode_6_port_switch_6
+
+
+#################################################################
+## Parental Control Related
+#################################################################
+
+# TV ###
+- alias: "Timer TV LG Salone"
+  hide_entity: True
+  initial_state: 'on'
+  trigger:
+    platform: state
+    entity_id: input_number.tv_minutes
+  action:
+    - service: script.timer_tv_script
+    - service: persistent_notification.create
+      data_template:
+        message: "Impostato timer di spegnimento fra {{ (states.input_number.tv_minutes.state | int) }} minuti"
+        title: "TV LG Salone"
