@@ -33,3 +33,10 @@ Poi ho seguito la guida https://www.youtube.com/watch?v=AsDHEDbyLfg
 
 ## Geofencing
 Devices that are in the zone ‘Home’ will not appear on the map in the Home Assistant UI.
+
+## AVVISI QUANDO H.A. E’ OFFLINE
+(Basato su google sheets e google calendar per gli SMS)
+https://www.labnol.org/internet/website-uptime-monitor/21060/ 
+(basato su www.uptimerobot.com e IFTTT, non so se possibile SMS…)
+https://ifttt.com/applets/65431405d-get-if-notifications-when-uptimerobot-com-detects-the-server-is-down-when-it-s-back-online 
+A prima prova, il metodo 2 sembra essere meglio: ho messo h.a. offline ed ho subito ricevuto la notifica tramite l’app per android IFTTT
