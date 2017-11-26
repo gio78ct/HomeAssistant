@@ -41,3 +41,6 @@ https://www.labnol.org/internet/website-uptime-monitor/21060/
 https://ifttt.com/applets/65431405d-get-if-notifications-when-uptimerobot-com-detects-the-server-is-down-when-it-s-back-online
 
 A prima prova, il metodo 2 sembra essere meglio: ho messo h.a. offline ed ho subito ricevuto la notifica tramite l’app per android IFTTT
+
+## Wake On Lan switch
+https://home-assistant.io/components/switch.wake_on_lan/
