@@ -43,4 +43,4 @@ https://ifttt.com/applets/65431405d-get-if-notifications-when-uptimerobot-com-de
 A prima prova, il metodo 2 sembra essere meglio: ho messo h.a. offline ed ho subito ricevuto la notifica tramite l’app per android IFTTT
 
 ## Wake On Lan switch
-https://home-assistant.io/components/switch.wake_on_lan/
+https://home-assistant.io/components/switch.wake_on_lan/ (viene anche spiegato come si fa a eseguire comandi su un dispositivo remoto tramite ssh)
