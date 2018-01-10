@@ -47,5 +47,7 @@ https://home-assistant.io/components/switch.wake_on_lan/ (viene anche spiegato c
 
 ## SONOFF relays
 https://github.com/arendst/Sonoff-Tasmota
+
+Per aggiornare, https://github.com/arendst/Sonoff-Tasmota/wiki/Upgrade
 alternativa
 https://github.com/KmanOz/KmanSonoff/blob/master/README.md
