@@ -46,4 +46,6 @@ A prima prova, il metodo 2 sembra essere meglio: ho messo h.a. offline ed ho sub
 https://home-assistant.io/components/switch.wake_on_lan/ (viene anche spiegato come si fa a eseguire comandi su un dispositivo remoto tramite ssh)
 
 ## SONOFF relays
+https://github.com/arendst/Sonoff-Tasmota
+alternativa
 https://github.com/KmanOz/KmanSonoff/blob/master/README.md
