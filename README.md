@@ -24,6 +24,9 @@ Vedi il documento "HomeAssistant/DUCKDNS_LETSENCRYPT.md"
 ## SSL: Let's Encrypt
 Vedi sopra "Dynamic DNS: duckdns.org"
 
+## NGINX reverse proxy
+https://community.home-assistant.io/t/homeassistant-nginx-ssl-proxy-setup/53
+
 ## TV LG-47LA660S
 Vedi la guida "TV_LG_LA660S.md"
 
