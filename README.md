@@ -27,6 +27,9 @@ Vedi sopra "Dynamic DNS: duckdns.org"
 ## NGINX reverse proxy
 https://community.home-assistant.io/t/homeassistant-nginx-ssl-proxy-setup/53
 
+Potrebbe eddere utile https://deviantengineer.com/2015/05/nginx-reverseproxy-centos7/
+
+
 ## TV LG-47LA660S
 Vedi la guida "TV_LG_LA660S.md"
 
