@@ -53,8 +53,10 @@ alternativa
 https://github.com/KmanOz/KmanSonoff/blob/master/README.md
 
 ## Text To Speech (TTS)
+Tutti i seguenti tentativi sono stati effettuati usando, come riproduttore, delle istanze "media_player.squeezebox".
+
 Google tts dà problemi a causa dell'utilizzo di SSL. Da trovare una soluzion e (ngix server?).
 
 Microsoft non supporta l'italiano (nonostante sembrerebbe il contrario, hass mi segnalava errori al file di configurazione).
 
-Adesso proverò PicoTTS o SVOX Pico. 
+Adesso proverò PicoTTS o SVOX Pico. Prova: qualità pessima e stesso rpoblema con SSL, sebbene sia un riconoscimento offline!!!
