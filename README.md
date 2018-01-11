@@ -59,6 +59,8 @@ alternativa
 https://github.com/KmanOz/KmanSonoff/blob/master/README.md
 
 ## Text To Speech (TTS)
+Vorrei realizzare qualcosa del genere: https://philhawthorne.com/j-a-r-v-i-s-inspired-announcementgreeting-for-home-assistant/
+
 Tutti i seguenti tentativi sono stati effettuati usando, come riproduttore, delle istanze "media_player.squeezebox".
 
 Google tts dà problemi a causa dell'utilizzo di SSL. Da trovare una soluzion e (ngix server?).
